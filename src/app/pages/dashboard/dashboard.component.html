@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+
+<div>
+  <input [(ngModel)]="nome" placeholder="Digite seu nome" />
+  <button (click)="enviar()">Enviar</button>
+</div>
+
+<div *ngIf="nomeEnviado?.length">
+    <p>Nome enviado: {{ nomeEnviado }}</p>
+  </div>  

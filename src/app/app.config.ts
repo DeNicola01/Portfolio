@@ -1,8 +1,14 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 
-import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+export const appConfig = {
+  providers: [
+    provideRouter([
+      { path: '', component: HomeComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'sobre', component: SobreComponent },
+    ])
+  ]
 };
